@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 # MongoDB connection setup
 mongo_host = os.getenv('MONGO_HOST', 'localhost')
-client = MongoClient(host='mongo-service', port=27017, username='root', password='pass', authSource="admin")
+client = MongoClient(host='mongo', port=27017)
 db = client.Student_db
 students_collection = db.students
 
@@ -40,4 +40,4 @@ def add_student():
     return redirect(url_for('home'))
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', debug=True)
+    app.run(host='0.0.0.0', debug=True, port = 5000)
