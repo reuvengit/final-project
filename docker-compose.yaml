@@ -12,14 +12,14 @@ services:
     ports:
       - "5000:5000"
     depends_on:
-      - mongo
+      - mongo-mongodb
 
   test:
     build:
       context: .
       dockerfile: Dockerfile.test
     depends_on:
-      - mongo
+      - mongo-mongodb
 
 volumes:
   mongo-data:
