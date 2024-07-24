@@ -1,7 +1,7 @@
 pipeline{
     agent{
         kubernetes{
-            label "recipes-project-agent"
+            label "student-agent"
             idleMinutes 5
             yamlFile 'build-pod.yaml'
             defaultContainer 'ez-docker-helm-build'
